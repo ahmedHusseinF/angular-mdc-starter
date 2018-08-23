@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+$mdc-theme-primary: #000; // primary color
+$mdc-theme-secondary: #e62b1e; // secondary color
+
+@import "~@angular-mdc/theme/material";
+
+body {
+  margin: 0;
+}
+
+// Remove clear button for IE inputs
+::-ms-clear {
+  display: none;
+}
+
+// Remove pseudo-element for password field from IE
+::-ms-reveal {
+  display: none;
+}

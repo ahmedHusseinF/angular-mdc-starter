@@ -1,0 +1,53 @@
+<mdc-app-bar [mdcElevation]="5" #appbar [fixed]="true" [fixedAdjustElement]="mainContent">
+  <mdc-app-bar-row>
+    <mdc-app-bar-section align="start" title="TEDxCairoUniversity">
+      <mdc-icon mdcAppBarNavIcon (click)="appdrawer.open()">menu</mdc-icon>
+    </mdc-app-bar-section>
+  </mdc-app-bar-row>
+</mdc-app-bar>
+
+<mdc-drawer #appdrawer="mdcDrawer" drawer='temporary' [closeOnClick]="false">
+  <mdc-drawer-content>
+    <mdc-list-group>
+      <!-- Start of side drawer -->
+      <mdc-list>
+        <mdc-list-divider></mdc-list-divider>
+        <div class="top-list">
+          <a [ngClass]="{'active-item': pageTitle === 'home' }" mdc-list-item [routerLink]="['home']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'home' }" [fontSize]="25" mdcListItemGraphic>home</mdc-icon>Home
+          </a>
+          <a [ngClass]="{'active-item': pageTitle === 'about' }" mdc-list-item [routerLink]="['about']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'about' }" [fontSize]="25" mdcListItemGraphic>info</mdc-icon>About
+          </a>
+          <a [ngClass]="{'active-item': pageTitle === 'team' }" mdc-list-item [routerLink]="['team']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'team' }" [fontSize]="25" mdcListItemGraphic>people</mdc-icon>Team
+          </a>
+          <a [ngClass]="{'active-item': pageTitle === 'events' }" mdc-list-item [routerLink]="['events']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'events' }" [fontSize]="25" mdcListItemGraphic>event</mdc-icon>Events
+          </a>
+          <a [ngClass]="{'active-item': pageTitle === 'talks' }" mdc-list-item [routerLink]="['talks']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'talks' }" [fontSize]="25" mdcListItemGraphic>video_library</mdc-icon>Watch
+            Talks
+          </a>
+          <a [ngClass]="{'active-item': pageTitle === 'sponsers' }" mdc-list-item [routerLink]="['sponsers']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'sponsers' }" [fontSize]="25" mdcListItemGraphic>money</mdc-icon>Sponsers
+          </a>
+        </div>
+        <mdc-list-divider></mdc-list-divider>
+        <div class="bottom-list">
+          <a [ngClass]="{'active-item' : pageTitle === 'contact'}" mdc-list-item [routerLink]="['contact']" routerLinkActive #rlaHome="routerLinkActive">
+            <mdc-icon [ngClass]="{'active-icon': pageTitle === 'contact' }" [fontSize]="25" mdcListItemGraphic>feedback</mdc-icon>Contact
+          </a>
+        </div>
+      </mdc-list>
+    </mdc-list-group>
+  </mdc-drawer-content>
+</mdc-drawer>
+
+<div #mainContent>
+  <router-outlet></router-outlet>
+
+  <footer>
+
+  </footer>
+</div>
